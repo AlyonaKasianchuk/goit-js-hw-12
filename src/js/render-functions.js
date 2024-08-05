@@ -4,12 +4,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const gallery = document.querySelector('.gallery');
 
-
 export function renderImages(images) {
   const markup = images.map(image => createImageCard(image)).join('');
-  gallery.innerHTML = markup;
+  
+  gallery.insertAdjacentHTML('beforeend', markup); 
 }
-
 
 function createImageCard({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) {
   return `
